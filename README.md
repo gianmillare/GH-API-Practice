@@ -1,5 +1,5 @@
 # GH-API-Practice
----------------------------------------------------------------------------------------------------------------------------
+
 
 This purposeful practice project is from Eric Matthes project-based programming book titled "Python Crash Course".
 
