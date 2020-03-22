@@ -80,19 +80,74 @@ headers = {'Accept': 'application/vnd.github.v3+json'}
 
 
 
-# Part 7: Adding Custom Tooltips (the information shown after hovering)
+# # Part 7: Adding Custom Tooltips (the information shown after hovering)
+# r = requests.get(url, headers=headers)
+# print(f"Status Code: {r.status_code}")
+#
+# response_dict = r.json()
+# repo_dicts = response_dict['items']
+#
+# repo_names, stars, labels = [], [], []
+# for repo_dict in repo_dicts:
+#     repo_names.append(repo_dict['name'])
+#     stars.append(repo_dict['stargazers_count'])
+#
+#     # Below is how you pull together a couple values into one output key
+#     owner = repo_dict['owner']['login']
+#     description = repo_dict['description']
+#     label = f"{owner}<br />{description}"
+#     labels.append(label)
+#
+# data = [{
+#     'type': 'bar',
+#     'x': repo_names,
+#     'y': stars,
+#     'hovertext': labels,
+#     'marker': {
+#         'color': 'RGB(179, 229, 255)',
+#         'line': {'width': 1.5, 'color': 'rgb(25, 25, 25)'},
+#     },
+#     'opacity': 0.6,
+# }]
+#
+# my_layout = {
+#     'title': 'Most Starred Python Project on Github',
+#     'titlefont': {'size': 28},
+#     'xaxis': {
+#         'title': 'Repository',
+#         'titlefont': {'size': 24},
+#         'tickfont': {'size': 14},
+#     },
+#     'yaxis': {
+#         'title': 'Stars',
+#         'titlefont': {'size': 24},
+#         'tickfont': {'size': 14},
+#     },
+# }
+#
+# fig = {'data': data, 'layout': my_layout}
+# offline.plot(fig, filename="plots/python_repos3.html")
+
+
+
+# Part 8: Adding Clickable links to our Graphs
 r = requests.get(url, headers=headers)
 print(f"Status Code: {r.status_code}")
 
 response_dict = r.json()
 repo_dicts = response_dict['items']
 
-repo_names, stars, labels = [], [], []
+repo_links, stars, labels = [], [], []
 for repo_dict in repo_dicts:
-    repo_names.append(repo_dict['name'])
+
+    # We combine the repository name and url to provide a clickable link below
+    repo_name = repo_dict['name']
+    repo_url = repo_dict['html_url']
+    repo_link = f"<a href='{repo_url}'>{repo_name}</a>"
+    repo_links.append(repo_link)
+
     stars.append(repo_dict['stargazers_count'])
 
-    # Below is how you pull together a couple values into one output key
     owner = repo_dict['owner']['login']
     description = repo_dict['description']
     label = f"{owner}<br />{description}"
@@ -100,18 +155,18 @@ for repo_dict in repo_dicts:
 
 data = [{
     'type': 'bar',
-    'x': repo_names,
+    'x': repo_links,
     'y': stars,
     'hovertext': labels,
     'marker': {
-        'color': 'RGB(179, 229, 255)',
-        'line': {'width': 1.5, 'color': 'rgb(25, 25, 25)'},
+        'color': 'RGB(43, 110, 194)',
+        'line': {'width': 1.5, 'color': 'RGB(0, 0, 0)'},
     },
     'opacity': 0.6,
 }]
 
 my_layout = {
-    'title': 'Most Starred Python Project on Github',
+    'title': 'Most Starred Python Projects in GitHub - Clickable Links in X-Axis',
     'titlefont': {'size': 28},
     'xaxis': {
         'title': 'Repository',
@@ -126,4 +181,4 @@ my_layout = {
 }
 
 fig = {'data': data, 'layout': my_layout}
-offline.plot(fig, filename="plots/python_repos3.html")
+offline.plot(fig, filename="plots/python_repos4.html")
