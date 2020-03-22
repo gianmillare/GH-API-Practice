@@ -15,3 +15,8 @@ This repositry also serves as a reference as I plan on using APIs in future pers
 
 ------------------------------------------------------------------------------------------------------------------------------
 
+### Part 1: Visuzalizing the standard (top 30) Most Starred Python Projects pulled from GitHub API
+
+![](preview/pt1.png)
+
+------------------------------------------------------------------------------------------------------------------------------
