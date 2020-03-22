@@ -27,3 +27,6 @@ Here I changed the color and also altered the titles of the plot.
 ![](preview/pt2.png)
 
 ------------------------------------------------------------------------------------------------------------------------------
+
+### Preview 3: Completion of the repository. 
+I alter the data to make the graph more clear, and also apply a "hover" affect that will show the name and description of the bar (first image). Then I add in another feature that allows the user to click on an x-axis title, which will bring them to the projects GitHub Repository (second image).
