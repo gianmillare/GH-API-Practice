@@ -15,8 +15,15 @@ This repositry also serves as a reference as I plan on using APIs in future pers
 
 ------------------------------------------------------------------------------------------------------------------------------
 
-### Part 1: Visuzalizing the standard (top 30) Most Starred Python Projects pulled from GitHub API
+### Preview 1: Visuzalizing the standard (top 30) Most Starred Python Projects pulled from GitHub API
 
 ![](preview/pt1.png)
+
+------------------------------------------------------------------------------------------------------------------------------
+
+### Preview 2: Customizing some of the plots features
+Here I changed the color and also altered the titles of the plot.
+
+![](preview/pt2.png)
 
 ------------------------------------------------------------------------------------------------------------------------------
