@@ -9,3 +9,9 @@ This repositry also serves as a reference as I plan on using APIs in future pers
 
 ---------------------------------------------------------------------------------------------------------------------------
 
+### Below is a screenshot/sneak peak at the code used throughout the repository
+
+![](preview/code.png)
+
+------------------------------------------------------------------------------------------------------------------------------
+
